@@ -25,7 +25,10 @@ export class FilesController {
     @UploadedFile()
     file: Express.Multer.File,
   ) {
+    
+    
     const fileName = await this.filesService.saveFile(file);
+    console.log(fileName);
     return { fileName: `${fileName}`, status: 200 };
   }
 }
